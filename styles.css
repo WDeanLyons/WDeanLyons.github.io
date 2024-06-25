@@ -1,96 +1,121 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+:root {
+    --primary-color: #003F72;
+    --secondary-color: #bf8d2c;
+    --text-color: #ffffff;
+    --background-color: #f4f4f4;
+}
+
+body, html {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: #333;
 }
 
 /* Header styles */
 header {
-    background-color: #333;
-    color: white;
-    text-align: center;
+    background-color: var(--primary-color);
     padding: 1rem;
 }
 
-header h1 {
-    margin: 0;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Navigation styles */
-nav {
-    background-color: #f4f4f4;
-    padding: 0.5rem;
+.logo {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 10px;
+    margin-left: 1rem;
 }
 
-nav a {
+nav ul li a {
+    color: var(--text-color);
     text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #0066cc;
+/* Hero section styles */
+.hero {
+    background: linear-gradient(to bottom right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    display: flex;
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin: 0.5rem 0;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.cta-buttons {
+    margin-top: 2rem;
+}
+
+.cta-button {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-right: 1rem;
+    display: inline-block;
+}
+
+.hero-image {
+    flex: 1;
+    /* Add styling for your image here */
 }
 
 /* Main content styles */
 main {
     padding: 20px;
-    flex-grow: 1;
     max-width: 800px;
     margin: 0 auto;
 }
 
-h2 {
-    color: #333;
-    border-bottom: 2px solid #333;
-    padding-bottom: 10px;
-}
-
 /* Footer styles */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--text-color);
     text-align: center;
     padding: 1rem;
     margin-top: auto;
 }
 
-/* Link styles */
-a {
-    color: #0066cc;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 /* Responsive design */
-@media (max-width: 600px) {
-    nav ul {
+@media (max-width: 768px) {
+    .hero {
         flex-direction: column;
-        align-items: center;
     }
 
-    nav ul li {
-        margin: 5px 0;
+    .hero-content, .hero-image {
+        flex: auto;
     }
 }
