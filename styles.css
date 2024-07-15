@@ -2,11 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0; /* Light grey background */
 }
 
 header {
-    background-color: #002a4d; /* Darkened blue */
-    padding: 1rem;
+    background: linear-gradient(to right, #002a4d, #005080); /* Gradient background */
+    padding: 1rem 2rem;
 }
 
 nav {
@@ -17,7 +18,7 @@ nav {
 
 .logo {
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 2rem; /* Larger font size */
     font-weight: bold;
 }
 
@@ -29,38 +30,41 @@ nav ul {
 }
 
 nav ul li {
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
+    font-size: 1.2rem; /* Larger font size */
 }
 
 .hero {
-    background: linear-gradient(to bottom right, #002a4d, #bf8d2c); /* Darkened blue in gradient */
+    background: linear-gradient(to bottom right, #002a4d, #bf8d2c); /* Gradient background */
     color: #ffffff;
     display: flex;
-    padding: 4rem 2rem;
-    align-items: center; /* Vertically center hero content */
+    flex-direction: column; /* Column layout for better mobile compatibility */
+    align-items: center; /* Center align hero content */
+    padding: 6rem 2rem;
+    text-align: center; /* Center text */
 }
 
 .hero-content {
-    text-align: center; /* Center text within hero-content */
+    max-width: 800px; /* Constrain width */
 }
 
 .hero h1 {
-    font-size: 2.5rem; /* Adjusted font size */
+    font-size: 3rem; /* Larger font size */
     margin: 0.5rem 0;
 }
 
 .hero h2 {
-    font-size: 1.8rem; /* Adjusted font size */
+    font-size: 2.5rem; /* Larger font size */
     margin: 0.5rem 0;
 }
 
 .hero h3 {
-    font-size: 1.2rem; /* Adjusted font size */
+    font-size: 1.5rem; /* Larger font size */
     margin: 0.5rem 0;
 }
 
@@ -71,46 +75,53 @@ nav ul li a {
 .cta-button {
     background-color: #bf8d2c;
     color: #ffffff;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 10px; /* More rounded corners */
     margin: 0 1rem; /* Added margin to both sides */
     display: inline-block;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
-
+.cta-button:hover {
+    background-color: #d4a556; /* Lighter on hover */
+}
 
 .hero-image {
-    flex: 1;
-    max-width: 50%; /* Limit image width */
-    margin-left: 2rem; /* Add some space between image and content */
+    margin-top: 2rem; /* Add spacing above image */
+    max-width: 100%; /* Ensure image doesn't overflow */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
 }
-
-
 
 footer {
     background-color: #002a4d; /* Darkened blue */
     color: #ffffff;
     text-align: center;
     padding: 1rem;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-
+    position: relative; /* Adjusted positioning */
 }
 
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column;
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
     }
 
-    .hero-content, .hero-image {
-        flex: auto;
-        text-align: center; /* Center content on smaller screens */
+    .hero h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .hero h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .hero h3 {
+        font-size: 1rem; /* Smaller font size for mobile */
     }
 
     .hero-image {
-        max-width: 100%; /* Allow image to take full width on smaller screens */
-        margin: 2rem 0; /* Add margin top and bottom */
+        margin-top: 1rem; /* Reduce spacing on mobile */
     }
 }
