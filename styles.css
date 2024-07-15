@@ -11,8 +11,12 @@ body {
     background-color: #f0f0f0; /* Light grey background */
 }
 
+header, footer {
+    background-color: #002a4d; /* Unified dark blue color */
+    color: #ffffff;
+}
+
 header {
-    background: linear-gradient(to right, #002a4d, #005080); /* Gradient background */
     padding: 1rem 2rem;
 }
 
@@ -103,13 +107,34 @@ nav ul li a {
 
 main {
     flex: 1; /* Allows main content to take up remaining space */
+    padding: 2rem; /* Add some padding for content */
 }
 
 footer {
-    background-color: #002a4d; /* Darkened blue */
-    color: #ffffff;
     text-align: center;
     padding: 1rem;
     width: 100%;
     position: relative; /* Adjusted positioning */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem; /* Adjust padding for smaller screens */
+    }
+
+    .hero h1 {
+        font-size: 2rem; /* Smaller font size for mobile */
+    }
+
+    .hero h2 {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+    }
+
+    .hero h3 {
+        font-size: 1rem; /* Smaller font size for mobile */
+    }
+
+    .hero-image {
+        margin-top: 1rem; /* Reduce spacing on mobile */
+    }
 }
