@@ -51,13 +51,13 @@ nav ul li a {
 }
 
 .hero {
-    background: linear-gradient(to bottom right, #002a4d, #bf8d2c); /* Gradient background */
     color: #ffffff;
     display: flex;
     flex-direction: column; /* Column layout for better mobile compatibility */
     align-items: center; /* Center align hero content */
     padding: 6rem 2rem;
     text-align: center; /* Center text */
+    flex: 1;
 }
 
 .hero-content {
