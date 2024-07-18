@@ -2,23 +2,20 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom right, #002a4d, #bf8d2c); /* Gradient background */
 }
 
 body {
     font-family: Arial, sans-serif;
     color: #ffffff;
-}
-
-header, footer {
-    background: transparent; /* Transparent background */
-    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #0a243e, #d4af37); /* Darker navy blue and rich gold gradient */
 }
 
 header {
     padding: 1rem 2rem;
+    width: 100%;
+    background: transparent; /* Transparent background */
 }
 
 nav {
@@ -84,7 +81,7 @@ nav ul li a {
 }
 
 .cta-button {
-    background-color: #bf8d2c;
+    background-color: #d4af37;
     color: #ffffff;
     padding: 1rem 2rem;
     text-decoration: none;
@@ -96,7 +93,7 @@ nav ul li a {
 }
 
 .cta-button:hover {
-    background-color: #d4a556; /* Lighter on hover */
+    background-color: #f0c14b; /* Lighter on hover */
 }
 
 .hero-image {
@@ -109,6 +106,9 @@ nav ul li a {
 main {
     flex: 1; /* Allows main content to take up remaining space */
     padding: 2rem; /* Add some padding for content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if there's not enough content to fill the space */
 }
 
 @media (max-width: 768px) {
