@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
 }
 
 body {
@@ -10,6 +11,10 @@ body {
     display: flex;
     flex-direction: column;
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1005%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='%230e2a47'%3e%3c/rect%3e%3cpath d='M0%2c561.231C105.853%2c581.401%2c213.983%2c532.276%2c304.359%2c473.591C394.472%2c415.077%2c464.733%2c330.331%2c507.427%2c231.734C549.594%2c134.354%2c564.907%2c25.777%2c543.254%2c-78.108C522.33%2c-178.494%2c455.228%2c-258.781%2c388.89%2c-336.975C321.907%2c-415.929%2c257.995%2c-512.205%2c156.717%2c-533.728C56.633%2c-554.997%2c-33.359%2c-476.783%2c-131.411%2c-447.544C-228.934%2c-418.462%2c-354.014%2c-441.341%2c-418.127%2c-362.309C-482.356%2c-283.133%2c-448.452%2c-165.464%2c-442.821%2c-63.668C-438.178%2c20.268%2c-424.17%2c101.304%2c-388.279%2c177.321C-352.751%2c252.571%2c-297.124%2c311.749%2c-237.95%2c370.257C-164.135%2c443.242%2c-101.97%2c541.801%2c0%2c561.231' fill='%230b2239'%3e%3c/path%3e%3cpath d='M1440 1097.467C1538.109 1084.755 1604.603 998.905 1690.271 949.429 1781.421 896.787 1920.103 894.866 1959.684 797.332 1999.5729999999999 699.038 1906.018 598.663 1873.606 497.657 1847.2440000000001 415.503 1832.0810000000001 332.88 1787.034 259.293 1734.902 174.132 1686.899 72.93 1592.932 39.160999999999945 1498.141 5.096000000000004 1395.405 51.07600000000002 1300.349 84.394 1209.48 116.24400000000003 1113.135 149.76799999999997 1056.0810000000001 227.33300000000003 1000.569 302.801 991.376 402.85699999999997 997.325 496.353 1002.554 578.539 1065.246 641.6949999999999 1087.489 720.986 1115.472 820.742 1073.451 944.543 1144.2649999999999 1020.172 1215.345 1096.085 1336.866 1110.83 1440 1097.467' fill='%23113255'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1005'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover; /* Ensure the image covers the entire viewport */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+}
 
 header {
     padding: 1rem 2rem;
@@ -21,6 +26,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 1rem; /* Add padding to the left and right of the navigation */
 }
 
 .logo {
@@ -38,12 +44,14 @@ nav ul {
 
 nav ul li {
     margin-left: 2rem;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 nav ul li a {
     color: #ffffff;
     text-decoration: none;
     font-size: 1.2rem; /* Larger font size */
+    padding: 0.5rem 1rem; /* Add padding inside the links */
 }
 
 .hero {
@@ -54,6 +62,7 @@ nav ul li a {
     padding: 6rem 2rem;
     text-align: center; /* Center text */
     flex: 1;
+    width: 100%;
 }
 
 .hero-content {
