@@ -19,5 +19,4 @@ This repository contains the source code for my personal website, hosted on GitH
 ## Future Improvements
 
 - Add more interactive elements with JavaScript
-- Implement a blog section
 - Improve accessibility features
