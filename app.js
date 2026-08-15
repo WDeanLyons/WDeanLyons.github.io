@@ -1,11 +1,44 @@
-/* W. Dean Lyons — scroll reveals and sticky header state.
-   No dependencies. Degrades gracefully if JS is off. */
+/* W. Dean Lyons — theme toggle, scroll reveals, sticky header.
+   No dependencies. Degrades gracefully if JS is off.
+
+   THEME DEFAULT: dark. To follow the visitor's system setting instead,
+   change getInitial() below to return the system preference first. */
 
 (function () {
   'use strict';
 
   var root = document.documentElement;
   root.classList.add('js');
+
+  /* ---- Theme -------------------------------------------------- */
+  function current() {
+    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+  }
+
+  function apply(theme, save) {
+    if (theme === 'light') root.setAttribute('data-theme', 'light');
+    else root.removeAttribute('data-theme');
+
+    var btn = document.querySelector('.themetoggle');
+    if (btn) {
+      btn.setAttribute('aria-label',
+        theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme');
+      btn.setAttribute('aria-pressed', theme === 'light' ? 'true' : 'false');
+    }
+
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'light' ? '#F4F7FB' : '#061527');
+
+    if (save) { try { localStorage.setItem('theme', theme); } catch (e) {} }
+  }
+
+  apply(current(), false);
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest('.themetoggle');
+    if (!btn) return;
+    apply(current() === 'light' ? 'dark' : 'light', true);
+  });
 
   /* ---- Reveal on scroll --------------------------------------- */
   var targets = document.querySelectorAll('[data-reveal]');
@@ -29,9 +62,7 @@
   /* ---- Sticky header hairline --------------------------------- */
   var bar = document.querySelector('.topbar');
   if (bar) {
-    var onScroll = function () {
-      bar.classList.toggle('is-stuck', window.scrollY > 8);
-    };
+    var onScroll = function () { bar.classList.toggle('is-stuck', window.scrollY > 8); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
