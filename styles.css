@@ -442,3 +442,14 @@ a:focus-visible, button:focus-visible {
   }
   .js [data-reveal] { opacity: 1; transform: none; }
 }
+
+/* ---------- Personal-site disclaimer (VA Handbook 8502) ---------- */
+.disclaimer {
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: .78rem;
+  line-height: 1.6;
+  color: var(--text-faint);
+  max-width: 70ch;
+}
