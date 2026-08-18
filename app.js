@@ -1,4 +1,4 @@
-/* W. Dean Lyons — theme toggle, scroll reveals, sticky header.
+/* Theme toggle, scroll reveals, sticky header.
    No dependencies. Degrades gracefully if JS is off.
 
    THEME DEFAULT: dark. To follow the visitor's system setting instead,
